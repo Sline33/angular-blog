@@ -1,0 +1,17 @@
+<div class="row-list">
+    <h2>{{postTitle}}</h2>
+    <span>{{ postCreates_at }}</span>
+    <p>{{postContent}}</p>
+
+    {{postLoveIts}}
+    <button mat-raised-button (click)="onGood()">Love it</button>
+    <button mat-raised-button color="warn" (click)="onBad()">Don't love it</button>
+    
+    <button mat-raised-button color="warn" (click)="onDeletePost(post)">
+      <span><i class="material-icons">delete_forever</i></span>
+    </button>
+</div>
+    
+    
+    
+   
