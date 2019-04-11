@@ -2,7 +2,7 @@
 'row-list-green': postLoveIts > 0,
 'row-list-red': postLoveIts < 0}">
     <h2>{{postTitle}}</h2>
-    <span>{{ postCreatedAt }}</span>
+    <span>{{ postCreatedAt | date:'short' }}</span>
     <p>{{postContent}}</p>
 
     <button mat-icon-button class="btn-up" (click)="onGood()">
@@ -11,10 +11,8 @@
     <button mat-icon-button class="btn-down" (click)="onBad()">
       <mat-icon>thumb_down</mat-icon>
     </button>
-    <button mat-button class="btn-delete" (click)="onDeletePost()">Basic</button>
+    <button mat-icon-button class="btn-delete" (click)="onDeletePost()">
+      <mat-icon>delete_forever</mat-icon>
+    </button>
     <p class="nb-love">Nombre de Love : {{postLoveIts}}</p>
 </div>
-    
-    
-    
-   

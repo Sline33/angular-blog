@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -43,7 +43,8 @@ import { PostService } from './services/post.service';
     MatListModule
   ],
   providers: [
-    PostService
+    PostService,
+    {provide: LOCALE_ID, useValue: "fr-CA" } 
   ],
   bootstrap: [AppComponent]
 })

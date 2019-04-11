@@ -6,6 +6,11 @@ import { Subscription } from 'rxjs';
 import { PostService } from '../services/post.service';
 import { Post } from '../models/post.model';
 
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+
+registerLocaleData(localeFr);
+
 @Component({
   selector: 'app-post-list',
   templateUrl: './post-list.component.html',
