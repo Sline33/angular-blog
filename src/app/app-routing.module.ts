@@ -5,10 +5,10 @@ import { NewPostComponent } from './new-post/new-post.component';
 import { PostListComponent } from './post-list/post-list.component';
 
 const routes: Routes = [
-  { path: 'post-list', component: PostListComponent },
+  { path: 'post', component: PostListComponent },
   { path: 'new-post', component: NewPostComponent },
-  { path: '', redirectTo: 'post-list', pathMatch: 'full' },
-  { path: '**', redirectTo: 'post-list' }
+  { path: '', redirectTo: 'post', pathMatch: 'full' },
+  { path: '**', redirectTo: 'post' }
 ];
 
 @NgModule({

@@ -17,6 +17,5 @@
 }
 .mat-button.mat-accent {
     color: white;
-    text-decoration: underline;
-    text-underline-position: under;
+    background-color: rgba(255, 255, 255, 0.315);
 }
