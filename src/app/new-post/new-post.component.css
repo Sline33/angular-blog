@@ -1,4 +1,19 @@
 .row-content {
-    margin-top: 80px;
-    padding: 0 30px;
+    margin-top: 180px;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.row-content p {
+    color: grey;
+    font-size: 14px;
+}
+.row-content form {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+.row-content form textarea{
+    min-height: 80px;
 }

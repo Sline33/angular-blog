@@ -1,12 +1,13 @@
 <div class="row-content">
+  <p>Les champs avec (*) sont obligatoires</p>
   <form [formGroup]="postForm" (ngSubmit)="onSavePost()">
 
-    <mat-form-field class="example-full-width">
-      <input matInput type="text" formControlName="title" placeholder="Titre">
+    <mat-form-field>
+      <input matInput type="text" formControlName="title" placeholder="Titre *">
     </mat-form-field>
 
-    <mat-form-field class="example-full-width">
-      <textarea matInput formControlName="content" placeholder="Votre Message"></textarea>
+    <mat-form-field>
+      <textarea matInput formControlName="content" placeholder="Votre Message *"></textarea>
     </mat-form-field>
       
     <button mat-raised-button color="primary" [disabled]="postForm.invalid" type="submit">Envoyé</button>
