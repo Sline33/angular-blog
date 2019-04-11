@@ -1,7 +1,14 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material';
 
+import { ModalViewComponent } from './modal-view/modal-view.component';
 
 import {PostService} from '../../services/post.service';
+
+export interface DialogData {
+  postTitle: string;
+  index: number;
+}
 
 @Component({
   selector: 'app-post-list-item',
@@ -16,7 +23,7 @@ export class PostListItemComponent implements OnInit {
   @Input() postLoveIts: number;
   @Input() index: number;
 
-  constructor(private postService: PostService) { }
+  constructor(private postService: PostService, public dialog: MatDialog) { }
 
   ngOnInit() {
   }
@@ -29,12 +36,13 @@ export class PostListItemComponent implements OnInit {
     this.postService.removeLove(this.index);
   }
 
-  onDeletePost(id: number){
-    if(confirm('Etes-vous sûr de vouloir supprimer le post : '+ this.postTitle)) {
-      this.postService.removePost(this.index);
-    } else {
-      return null;
-    }
+  openDialog(): void {
+    const dialogRef = this.dialog.open(ModalViewComponent, {
+      width: '450px', data: {postTitle: this.postTitle, index: this.index}
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('Fermeture du modal !');
+    });
   }
 
 }

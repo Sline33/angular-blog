@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { PostListItemComponent } from './post-list/post-list-item/post-list-item.component';
 import { NewPostComponent } from './new-post/new-post.component';
+import { ModalViewComponent } from './post-list/post-list-item/modal-view/modal-view.component';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
@@ -16,16 +17,20 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatListModule} from '@angular/material/list';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 import { PostService } from './services/post.service';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     PostListComponent,
     PostListItemComponent,
-    NewPostComponent
+    NewPostComponent,
+    ModalViewComponent
   ],
   imports: [
     BrowserModule,
@@ -40,12 +45,17 @@ import { PostService } from './services/post.service';
     MatIconModule,
     MatInputModule,
     MatFormFieldModule,
-    MatListModule
+    MatListModule,
+    MatDialogModule
   ],
+  exports: [ 
+    PostListItemComponent
+   ],
   providers: [
     PostService,
     {provide: LOCALE_ID, useValue: "fr-CA" } 
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ModalViewComponent]
 })
 export class AppModule { }
