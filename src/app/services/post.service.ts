@@ -42,9 +42,13 @@ export class PostService {
   }
 
   removePost(id: number){
-    this.posts.splice(id, 1);
-    this.savePosts();
-    this.emitPosts();
+    if(confirm('Etes-vous sûr de vouloir supprimer ce post ?')) {
+      this.posts.splice(id, 1);
+      this.savePosts();
+      this.emitPosts();
+    } else {
+      return null;
+    }
   }
 
   addLove(id: number) {
