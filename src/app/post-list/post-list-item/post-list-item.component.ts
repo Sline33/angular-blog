@@ -27,11 +27,14 @@ export class PostListItemComponent implements OnInit {
 
   onBad() {
     this.postService.removeLove(this.index);
-
   }
 
   onDeletePost(id: number){
-    this.postService.removePost(this.index);
+    if(confirm('Etes-vous sûr de vouloir supprimer le post : '+ this.postTitle)) {
+      this.postService.removePost(this.index);
+    } else {
+      return null;
+    }
   }
 
 }
