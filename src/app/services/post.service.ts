@@ -41,17 +41,21 @@ export class PostService {
     this.emitPosts();
   }
 
-  removePost(post: Post) {  
-    const postIndexToRemove = this.posts.findIndex(
-      (postEl) => {
-        if(postEl === post) {
-          return true;
-        }
-      }
-    );
-    this.posts.slice(postIndexToRemove);
+  removePost(id: number){
+    this.posts.splice(id, 1);
     this.savePosts();
     this.emitPosts();
   }
 
+  addLove(id: number) {
+    this.posts[id].loveIts++;
+    this.savePosts();
+    this.emitPosts();
+  }
+
+  removeLove(id: number) {
+    this.posts[id].loveIts--;
+    this.savePosts();
+    this.emitPosts();
+  }
 }

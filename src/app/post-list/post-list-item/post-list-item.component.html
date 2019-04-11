@@ -1,15 +1,18 @@
-<div class="row-list">
+<div [ngClass]="{'row-list': true,
+'row-list-green': postLoveIts > 0,
+'row-list-red': postLoveIts < 0}">
     <h2>{{postTitle}}</h2>
-    <span>{{ postCreates_at }}</span>
+    <span>{{ postCreatedAt }}</span>
     <p>{{postContent}}</p>
 
-    {{postLoveIts}}
-    <button mat-raised-button (click)="onGood()">Love it</button>
-    <button mat-raised-button color="warn" (click)="onBad()">Don't love it</button>
-    
-    <button mat-raised-button color="warn" (click)="onDeletePost(post)">
-      <span><i class="material-icons">delete_forever</i></span>
+    <button mat-icon-button class="btn-up" (click)="onGood()">
+      <mat-icon>thumb_up</mat-icon>
     </button>
+    <button mat-icon-button class="btn-down" (click)="onBad()">
+      <mat-icon>thumb_down</mat-icon>
+    </button>
+    <button mat-button class="btn-delete" (click)="onDeletePost()">Basic</button>
+    <p class="nb-love">Nombre de Love : {{postLoveIts}}</p>
 </div>
     
     

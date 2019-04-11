@@ -22,16 +22,17 @@ export class PostListItemComponent implements OnInit {
   }
 
   onGood() {
-    this.postLoveIts++;
+    this.postService.addLove(this.index);
   }
 
 
   onBad() {
-    this.postLoveIts--;
+    this.postService.removeLove(this.index);
+
   }
 
-  onDeletePost(post: Post){
-    this.postService.removePost(post);
+  onDeletePost(id: number){
+    this.postService.removePost(this.index);
   }
 
 }
