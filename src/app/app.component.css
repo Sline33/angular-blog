@@ -15,3 +15,8 @@
     margin-left: 15px;
     font-size: 19px;
 }
+.mat-button.mat-accent {
+    color: white;
+    text-decoration: underline;
+    text-underline-position: under;
+}

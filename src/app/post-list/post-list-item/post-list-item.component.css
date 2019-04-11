@@ -22,10 +22,23 @@
     background-color: #f8d7da;
     border: 1px solid #f5c6cb;
 }
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.line {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.514);
+}
+.content {
+    margin: 25px 0;
+}
 
 .btn-delete {
     float: right;
-    right: -20px;
+    right: -11px;
+    top: 6px;
 }
 
 .btn-up {

@@ -35,6 +35,10 @@ export class PostListComponent implements OnInit, OnDestroy {
     this.postService.emitPosts();
   }
 
+  onNewPost() {
+    this.router.navigate(['/new-post']);
+  }
+
   ngOnDestroy() {
     this.postSubscrition.unsubscribe();
   }

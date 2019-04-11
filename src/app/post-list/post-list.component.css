@@ -1,4 +1,15 @@
 .row-content {
-    margin-top: 80px;
+    margin: 90px 80px 25px 80px;
     padding: 0 30px;
+}
+.btn-post-list {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+}
+.btn-post-list button  {
+    font-size: 15px;
+}
+.btn-post-list button i {
+    margin-right: 5px;
 }

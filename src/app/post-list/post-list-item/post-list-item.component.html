@@ -1,10 +1,16 @@
 <div [ngClass]="{'row-list': true,
 'row-list-green': postLoveIts > 0,
 'row-list-red': postLoveIts < 0}">
-    <h2>{{postTitle}}</h2>
-    <span>{{ postCreatedAt | date:'short' }}</span>
+  <div class="header">
+      <h2>{{postTitle}}</h2>
+      <p>{{ postCreatedAt | date:'short' }}</p>
+  </div>
+  <div class="line"></div>
+  <div class="content">
     <p>{{postContent}}</p>
-
+  </div>
+  <div class="line"></div>
+  <div class="footer">
     <button mat-icon-button class="btn-up" (click)="onGood()">
       <mat-icon>thumb_up</mat-icon>
     </button>
@@ -15,4 +21,6 @@
       <mat-icon>delete_forever</mat-icon>
     </button>
     <p class="nb-love">Nombre de Love : {{postLoveIts}}</p>
+  </div>
+  
 </div>

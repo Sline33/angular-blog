@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
+
 import {PostService} from '../../services/post.service';
 
 @Component({
@@ -23,7 +24,6 @@ export class PostListItemComponent implements OnInit {
   onGood() {
     this.postService.addLove(this.index);
   }
-
 
   onBad() {
     this.postService.removeLove(this.index);
